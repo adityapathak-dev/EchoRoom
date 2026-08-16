@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/*
+ * EchoRoom Design System — "Ocean of Information"
+ *
+ * Theme palette:
+ *   Primary Ocean Blue: #0EA5E9
+ *   Deep Ocean:         #0369A1
+ *   Aqua:               #22D3EE
+ *   Seafoam:            #2DD4BF
+ *   Surface Glow:       #67E8F9
+ *   Backgrounds:        #F0FDFF, #ECFEFF, #F8FAFC
+ *   Text:               #0F172A, #1E293B, #475569
+ *   Success/Corrective: #14B8A6
+ */
+
+@theme {
+  /* ── Colors ─────────────────────────────────── */
+  --color-ocean-bg: #F0FDFF;
+  --color-ocean-bg-alt: #ECFEFF;
+  --color-ocean-card: rgba(255, 255, 255, 0.75);
+  --color-ocean-card-border: rgba(14, 165, 233, 0.18);
+
+  --color-ocean-blue: #0EA5E9;
+  --color-ocean-deep: #0369A1;
+  --color-ocean-aqua: #22D3EE;
+  --color-ocean-seafoam: #2DD4BF;
+  --color-ocean-glow: #67E8F9;
+  --color-ocean-success: #14B8A6;
+
+  --color-text-main: #0F172A;
+  --color-text-sub: #1E293B;
+  --color-text-muted: #475569;
+
+  /* ── Fonts ──────────────────────────────────── */
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── Animations ─────────────────────────────── */
+  --animate-fade-in: ocean-fade-in 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-float-slow: ocean-float 6s ease-in-out infinite;
+  --animate-pulse-glow: ocean-pulse 3s ease-in-out infinite;
+  --animate-rise-up: ocean-rise 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ocean-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ocean-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes ocean-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(14, 165, 233, 0.45);
+  }
+}
+
+@keyframes ocean-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Base resets ────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-ocean-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glassmorphism Utility Classes ───────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(14, 165, 233, 0.16);
+  box-shadow: 0 10px 30px -10px rgba(3, 105, 161, 0.06);
+}
+
+.glass-panel-hover {
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(14, 165, 233, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px rgba(14, 165, 233, 0.15);
+}
+
+.glass-pill {
+  background: rgba(236, 254, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+/* ── Respect reduced motion ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
