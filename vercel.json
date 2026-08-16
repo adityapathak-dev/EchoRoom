@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd echoroom && npm run build",
+  "buildCommand": "cd echoroom && npm install --include=dev && npm run build",
   "outputDirectory": "echoroom/dist",
   "framework": "vite",
   "rewrites": [
