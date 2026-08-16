@@ -189,7 +189,7 @@ export default function BrainBubbleOcean({
                   color: "#0369A1",
                 }}
                 labelFormatter={() => ""}
-                formatter={(v: number) => [`${v}%`, "Ocean Diversity"]}
+                formatter={(v: any) => [`${v}%`, "Ocean Diversity"]}
               />
               <Line
                 type="monotone"

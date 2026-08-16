@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd echoroom && npm run build",
+  "outputDirectory": "echoroom/dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

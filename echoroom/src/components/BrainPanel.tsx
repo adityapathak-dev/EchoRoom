@@ -103,7 +103,7 @@ export default function BrainPanel({ weights, history }: BrainPanelProps) {
                 borderRadius: "6px",
               }}
               labelFormatter={() => ""}
-              formatter={(v: number) => [`${v}%`, "diversity"]}
+              formatter={(v: any) => [`${v}%`, "diversity"]}
             />
             <Line
               type="monotone"
